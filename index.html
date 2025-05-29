@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urvi Rastogi | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6f0;
+      color: #333;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffe3e3;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+    nav a:hover {
+      color: #d81159;
+    }
+
+    /* HEADER STYLES */
+    header {
+      padding-top: 80px;
+      background: url('image8.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 1;
+    }
+
+    header section {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    header h1,
+    header p {
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.5rem;
+    }
+
+    /* REST OF THE SITE */
+    section {
+      padding: 100px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+    section:nth-of-type(2) { animation-delay: 0.3s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.9s; }
+    section:nth-of-type(5) { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #3e3e3e;
+    }
+
+    p {
+      max-width: 600px;
+      margin-top: 1rem;
+      line-height: 1.6;
+      color: #5a5a5a;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffc8dd;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      background-color: #ffafcc;
+    }
+
+    .projects a {
+      display: block;
+      margin: 10px;
+      color: #6d6875;
+      text-decoration: underline;
+      transition: color 0.3s ease-in-out;
+    }
+    .projects a:hover {
+      color: #d81159;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    .skills-list span {
+      padding: 8px 15px;
+      background-color: #ffe5ec;
+      border-radius: 20px;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #ffe3e3;
+      font-size: 14px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fbb1bd;
+      padding: 10px 15px;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+    .back-to-top:hover {
+      background-color: #d81159;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><strong>MyPortfolio</strong></div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header id="home">
+    <section>
+      <h1>Hi, I'm Urvi Rastogi</h1>
+      <p>Frontend Developer | Student | Learner</p>
+      <button class="btn" onclick="window.open('resume.pdf')">Download Resume</button>
+    </section>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a B.Tech Computer Science Engineering student, having just completed my second year of college, with a strong interest in frontend development. I enjoy creating clean, responsive, and user-friendly web experiences using technologies like HTML, CSS, JavaScript, Java, and Git. I’ve worked on several meaningful projects, including  calculator with a minimal UI, a personal portfolio website with smooth navigation and animations, a blogging platform that allows users to create and manage posts, and a mental health support website designed to offer community-based resources and mindfulness tools. These projects have not only enhanced my technical skills but also deepened my understanding of user-centric design and real-world problem solving. I’m currently focused on further sharpening my development skills and exploring new technologies as I prepare for upcoming internship and job opportunities. “Always learning, always building.”</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Java</span>
+      <span>Git</span>
+      <span>Responsive Design</span>
+      <span>GitHub</span>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <a href="https://github.com/yourusername/calculator" target="_blank" rel="noopener noreferrer">🧮 Calculator</a>
+    <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener noreferrer">🌐 Portfolio Website</a>
+    <a href="https://github.com/yourusername/imagegallery" target="_blank" rel="noopener noreferrer">🌐 Image Gallery</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: urvirastogi15@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/urvi-rastogi-1936aa291" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/urvi-rastogi-1936aa291</a></p>
+    <p>GitHub: <a href="https://github.com/urvirastogi" target="_blank" rel="noopener noreferrer">https://github.com/urvirastogi</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Urvi Rastogi. All rights reserved.</p>
+  </footer>
+
+  <a href="#home" class="back-to-top" title="Back to top">↑</a>
+</body>
+</html>
